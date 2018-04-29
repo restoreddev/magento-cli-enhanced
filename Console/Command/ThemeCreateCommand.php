@@ -29,7 +29,12 @@ class ThemeCreateCommand extends BaseCommand
     protected function configure()
     {
         $this->setName('theme:create')
-             ->setDescription('Generates theme based on Magento Blank');
+             ->setDescription('Generates frontend theme')
+             ->setHelp(
+                "Creates a new frontend theme.\n" .
+                "The command asks for the theme name and then generates a custom theme based on Magento/blank and\n" .
+                'generates all the static assets folders.'
+            );
     }
 
     /**
@@ -37,6 +42,11 @@ class ThemeCreateCommand extends BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if (!file_exists(getcwd() . self::DS . 'app')) {
+            $output->writeln('Please run in the project root.');
+            return;
+        }
+
         $helper = $this->getHelper('question');
         $nameQuestion = new Question('Please enter the namespace and name of the theme e.g. "CompanyName/luma": ');
 
