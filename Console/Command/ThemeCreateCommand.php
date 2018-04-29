@@ -70,24 +70,24 @@ class ThemeCreateCommand extends BaseCommand
             }
         }
 
-        $themeXml = $this->getTemplateContents('theme.xml');
+        $themeXml = $this->getTemplateContents('theme', 'theme.xml');
         $themeXml = str_replace('THEME_NAME', $this->themeNamespace . ' ' . $this->themeName, $themeXml);
 
-        $themeRegister = $this->getTemplateContents('registration.php');
+        $themeRegister = $this->getTemplateContents('theme', 'registration.php');
         $themeRegister = str_replace(
             'COMPONENT_NAME',
             'frontend/' . $this->themeNamespace . '/' . $this->themeName,
             $themeRegister
         );
 
-        $themeComposer = $this->getTemplateContents('composer.json');
+        $themeComposer = $this->getTemplateContents('theme', 'composer.json');
         $themeComposer = str_replace(
             'MODULE_NAME',
             strtolower($this->themeNamespace . '/' . $this->themeName),
             $themeComposer
         );
 
-        $themeExtends = $this->getTemplateContents('_extend.less');
+        $themeExtends = $this->getTemplateContents('theme', '_extend.less');
 
         $this->putFileInTheme('theme.xml', $themeXml);
         $this->putFileInTheme('registration.php', $themeRegister);

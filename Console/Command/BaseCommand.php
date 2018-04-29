@@ -20,13 +20,14 @@ class BaseCommand extends Command
      * @param  string $filename
      * @return string
      */
-    protected function getTemplateContents($filename)
+    protected function getTemplateContents($folder, $filename)
     {
         return file_get_contents(
             __DIR__ . self::DS .
             '..' . self::DS .
             '..' . self::DS .
             'templates' . self::DS .
+            $folder . self::DS .
             $filename
         );
     }
