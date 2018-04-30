@@ -1,6 +1,6 @@
 <?php
 
-namespace Restoreddev\CliEnhanced\Console\Command;
+namespace RestoredDev\CliEnhanced\Console\Command;
 
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Input\InputInterface;
@@ -40,11 +40,6 @@ class ModuleCreateCommand extends BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if (!file_exists(getcwd() . self::DS . 'app')) {
-            $output->writeln('Please run in the project root.');
-            return;
-        }
-
         $helper = $this->getHelper('question');
         $nameQuestion = new Question('Please enter the namespace and name of the module e.g. "CompanyName/Sales": ');
 
@@ -103,7 +98,7 @@ class ModuleCreateCommand extends BaseCommand
      */
     protected function getModulePath()
     {
-        return getcwd() . self::DS .
+        return BP . self::DS .
                'app' . self::DS .
                'code' . self::DS .
                $this->moduleNamespace . self::DS .

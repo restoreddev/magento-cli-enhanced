@@ -1,6 +1,6 @@
 <?php
 
-namespace Restoreddev\CliEnhanced\Console\Command;
+namespace RestoredDev\CliEnhanced\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Question\Question;
