@@ -1,6 +1,9 @@
 # CliEnhanced
 CliEnhanced is a helper module that adds commands to the `bin/magento` list to simplify the development experience.
 
+### Installation
+Run `composer require restoreddev/magento-cli-enhanced --dev` and then `bin/magento setup:upgrade`.
+
 ### Commands
 #### theme:create
 The theme create command generates a custom storefront theme in `app/design` based on Magento/blank.
