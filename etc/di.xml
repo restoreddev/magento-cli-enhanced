@@ -4,6 +4,7 @@
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="theme_create_command" xsi:type="object">Restoreddev\CliEnhanced\Console\Command\ThemeCreateCommand</item>
+                <item name="module_create_command" xsi:type="object">Restoreddev\CliEnhanced\Console\Command\ModuleCreateCommand</item>
             </argument>
         </arguments>
     </type>

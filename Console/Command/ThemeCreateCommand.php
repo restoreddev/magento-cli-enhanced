@@ -31,10 +31,10 @@ class ThemeCreateCommand extends BaseCommand
         $this->setName('theme:create')
              ->setDescription('Generates frontend theme')
              ->setHelp(
-                "Creates a new frontend theme.\n" .
-                "The command asks for the theme name and then generates a custom theme based on Magento/blank and\n" .
-                'generates all the static assets folders.'
-            );
+                 "Creates a new frontend theme.\n" .
+                 "The command asks for the theme name and then generates a custom theme based on Magento/blank and\n" .
+                 'generates all the static assets folders.'
+             );
     }
 
     /**
